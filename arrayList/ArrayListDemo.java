@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Collections;
 
 class ArrayListDemo {
 	
@@ -12,7 +13,7 @@ class ArrayListDemo {
 		System.out.println("\n\t\tArrayList Demo\n");
 		int choice;
 		do {
-			System.out.println("1. Create  2. Insert  3. Delete	4. Display	5. Exit");
+			System.out.println("1. Create  2. Insert  3. Delete	4. Display	5. Search  6. Sort  7. Size of array list  8. Exit");
 			System.out.print("Enter choice: ");
 			choice = sc.nextInt();
 		
@@ -132,12 +133,42 @@ class ArrayListDemo {
 				
 					System.out.print("Data in the array list: ");
 					for(Integer value : arrayList) {
-							System.out.print(value+" -> ");
+						System.out.print(value+" -> ");
 					}
 					System.out.println();
+					break;							
+					
+				case 5:
+					System.out.print("Enter the element you want to search in the array list: ");
+					int searchElement = sc.nextInt();
+					boolean found = false;
+					int index = 0;
+					for(int listElement : arrayList) {
+						if(listElement == searchElement) {
+							found = true;
+							System.out.println("Index of "+searchElement+": "+index);
+						}
+						index++;
+					}
+					if(!found) {
+						System.out.println("Element not found in the array list");
+					}
 					break;
 				
-				case 5:
+				case 6:
+					if(!created) {
+						System.out.println("Error: Please create array list first!");
+						break;
+					}
+					Collections.sort(arrayList);
+					System.out.println("Array List Sorted Successfully!");
+					break;
+				
+				case 7:
+					System.out.println("Size of array list: "+arrayList.size());
+					break;
+				
+				case 8:
 					sc.close();
 					System.exit(0);
 					break;
@@ -146,7 +177,7 @@ class ArrayListDemo {
 						System.out.println("Invalid choice!");
 						break;
 			}
-		} while(choice != 5);
+		} while(choice != 8);
 		sc.close();
 	}
 	
