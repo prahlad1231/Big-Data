@@ -132,6 +132,11 @@ class LinkedListDemo {
 					break;
 					
 				case 5:
+					if(!created) {
+						System.out.println("Error: Please create linked list first!");
+						break;
+					}
+					
 					System.out.print("Enter the element you want to search in the linked list: ");
 					int searchElement = sc.nextInt();
 					boolean found = false;
@@ -158,6 +163,11 @@ class LinkedListDemo {
 					break;
 				
 				case 7:
+					if(!created) {
+						System.out.println("Error: Please create linked list first!");
+						break;
+					}
+					
 					System.out.println("Size of linked list: "+linkedList.size());
 					break;
 				
