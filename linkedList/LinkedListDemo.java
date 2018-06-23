@@ -13,7 +13,7 @@ class LinkedListDemo {
 		System.out.println("\n\t\t\tLinked List Demo\n");
 		int choice;
 		do {
-			System.out.println("1. Create  2. Insert  3. Delete	4. Display 5. Search  6. Sort  7. Size of array  8. Exit");
+			System.out.println("1. Create  2. Insert  3. Delete	4. Display 5. Search  6. Sort  7. Size of linked list  8. Exit");
 			System.out.print("Enter choice: ");
 			choice = sc.nextInt();
 		
