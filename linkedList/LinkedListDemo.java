@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.Collections;
 
 class LinkedListDemo {
 	
@@ -12,7 +13,7 @@ class LinkedListDemo {
 		System.out.println("\n\t\t\tLinked List Demo\n");
 		int choice;
 		do {
-			System.out.println("1. Create  2. Insert  3. Delete	4. Display	5. Exit");
+			System.out.println("1. Create  2. Insert  3. Delete	4. Display 5. Search  6. Sort  7. Size of array  8. Exit");
 			System.out.print("Enter choice: ");
 			choice = sc.nextInt();
 		
@@ -129,8 +130,38 @@ class LinkedListDemo {
 					}
 					System.out.println();
 					break;
-				
+					
 				case 5:
+					System.out.print("Enter the element you want to search in the linked list: ");
+					int searchElement = sc.nextInt();
+					boolean found = false;
+					int index = 0;
+					for(int listElement : linkedList) {
+						if(listElement == searchElement) {
+							found = true;
+							System.out.println("Index of "+searchElement+": "+index);
+						}
+						index++;
+					}
+					if(!found) {
+						System.out.println("Element not found in the linked list");
+					}
+					break;
+				
+				case 6:
+					if(!created) {
+						System.out.println("Error: Please create linked list first!");
+						break;
+					}
+					Collections.sort(linkedList);
+					System.out.println("Linked List Sorted Successfully!");
+					break;
+				
+				case 7:
+					System.out.println("Size of linked list: "+linkedList.size());
+					break;
+				
+				case 8:
 					sc.close();
 					System.exit(0);
 					break;
@@ -139,7 +170,7 @@ class LinkedListDemo {
 						System.out.println("Invalid choice!");
 						break;
 			}
-		} while(choice != 5);
+		} while(choice != 8);
 		sc.close();
 	}
 	
