@@ -139,6 +139,11 @@ class ArrayListDemo {
 					break;							
 					
 				case 5:
+					if(!created) {
+						System.out.println("Error: Please create array list first!");
+						break;
+					}
+					
 					System.out.print("Enter the element you want to search in the array list: ");
 					int searchElement = sc.nextInt();
 					boolean found = false;
@@ -165,6 +170,11 @@ class ArrayListDemo {
 					break;
 				
 				case 7:
+					if(!created) {
+						System.out.println("Error: Please create array list first!");
+						break;
+					}
+					
 					System.out.println("Size of array list: "+arrayList.size());
 					break;
 				
