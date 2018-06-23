@@ -29,6 +29,10 @@ class HashMapDemo {
 					}
 					
 				case 2:
+					if(!created) {
+						System.out.println("Error: HashMap doesn't exists!");
+						break;
+					}
 					Integer key;
 					String value;
 					
@@ -41,6 +45,10 @@ class HashMapDemo {
 					break;
 					
 				case 3:
+					if(!created) {
+						System.out.println("Error: HashMap doesn't exists!");
+						break;
+					}
 					System.out.println("Enter the key: ");
 					Integer toDelete = sc.nextInt();
 					
@@ -53,6 +61,10 @@ class HashMapDemo {
 					break;
 					
 				case 4:
+					if(!created) {
+						System.out.println("Error: HashMap doesn't exists!");
+						break;
+					}
 					System.out.println("Enter the key: ");
 					int toSearch = sc.nextInt();
 					
@@ -64,6 +76,10 @@ class HashMapDemo {
 					break;
 					
 				case 5:
+					if(!created) {
+						System.out.println("Error: HashMap doesn't exists!");
+						break;
+					}
 					System.out.println("Key-Value Pairs are: ");
 					Set<Integer> keySet = hashMap.keySet();
 					for(Integer hashValue : hashMap.keySet()) {
